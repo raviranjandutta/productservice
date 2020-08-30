@@ -1,39 +1,22 @@
 package com.personal.productservice.model;
 
 
+import lombok.Data;
 
+import javax.persistence.*;
+
+@Data
+@Entity
+@Table(name = "product_details")
 public class Product {
+    @Id
+    @GeneratedValue
+    @Column(name = "id", nullable = false)
     private int id;
+    @Column(name = "name", length = 64, nullable = false)
     private String name;
+    @Column(name = "brand", length = 64, nullable = false)
     private String brand;
 
-    public Product(int id, String name, String brand) {
-        this.id = id;
-        this.name = name;
-        this.brand = brand;
-    }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
 }
