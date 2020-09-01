@@ -13,9 +13,9 @@ public class Product {
     @GeneratedValue
     @Column(name = "id", nullable = false)
     private int id;
-    @Column(name = "name", length = 64, nullable = false)
+    @Column(name = "name", length = 64, nullable = false, unique = true)
     private String name;
-    @Column(name = "brand", length = 64, nullable = false)
+    @Column(name = "brand", length = 64, nullable = false, unique = false)
     private String brand;
 
 
